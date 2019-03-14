@@ -3,30 +3,23 @@ Treehouse FSJS Techdegree:
 project 1 - A Random Quote Generator
 ******************************************/
 
-// Study guide for this project - https://drive.google.com/file/d/1s5grutGuQFwJcQP8bFwEI69Q8FCkGdDk/view?usp=sharing
+/* Study guide for this project - https://drive.google.com/file/d/1s5grutGuQFwJcQP8bFwEI69Q8FCkGdDk/view?usp=sharing
 
-
-/***
-  Create the array of quote objects and name it `quotes`.
-  Add at least five quote objects to the `quotes` array.
-  Give each quote object a `quote` and `source` property.
-  Add the `citation` property to at least one object in the array.
-  Add the `year` property to at least one object in the array.
-  Use console.log() to log your array of quotes to the console.
-***/
-
+Start of quotes
+------------------------------------------------------------------------------*/
 var quotes = [
     {
+      /*individual qote will need to be pulled using a random number generator then use that value to select the quote at random */
         quote : 'Although the world is full of suffering, it is full also of the overcoming of it.',
         source : 'Helen Keller',
         citation : 'US blind & deaf educator',
-        year : '1880 - 1968'
+        year :'1903'
     },
     {
         quote : 'Luck is the residue of design.',
         source : 'Branch Rickey',
         citation : 'US baseball administrator',
-        year : '1881 - 1965'
+        year : '1946'
     },
     {
         quote : 'My theory of evolution is that Darwin was adopted.',
@@ -51,43 +44,100 @@ var quotes = [
         source : 'Seneca',
         citation : 'Roman dramatist, philosopher, & politician',
         year : '5 BC - 65 AD'
+    },
+    {
+        quote : 'Two years from now, spam will be solved.',
+        source : 'Bill Gates',
+        citation : 'Founder of Microsoft Corporation',
+        year : '2004'
     }
 ];
+/*------------------------------------------------------------------------------
+END of quotes */
 
-//Used to test quotes in console
-//console.log(quotes);
+//Used to test full list of quotes in console
+//console.log(quotes.year);
 
-/***
-  Create the `getRandomQuote` function to:
-   - Create a variable to store a random number
-   - Cse the random number to `return` a random quote object from the `quotes` array.
-***/
 
-//create a variable to store the random number generated from 0 to the length of the quotes (0-5)
+
+/* The function should look like this ----  Below
+function getRandomQuote() {
+generate a random number between 0 and the last index in the array parameter
+use the random number and box notation to grab a random item from the quotes array
+return the random item
+}
+*/
 
 //Start of random quote function
 function getRandomQuote() {
+  //create a variable to store the random number generated from 0 to the length of the quotes
   var randomNum = Math.floor( Math.random() * quotes.length );
-  //compare randomNum with quotes to pull random quote
+  //grabbing a random quote using the randomNum variable
   return(quotes[randomNum]);
-  console.log(randomNum);
+  //just to see if it is creating a random number use the log below
+  //console.log(randomNum);
 }
 
-getRandomQuote();
 /***
   Create the `printQuote` function to:
    - Call the `getRandomQuote` function and assign it to a variable.
    - Create a variable for the HTML string and set it equal to an empty string.
    - Use the HTML template in the instructions or the markup in the index.html file, AND
-     the random quote vairable to build your HTML string.
+     the random quote varable to build your HTML string.
    - Add the quote and source section to the HTML string.
    - Use an if statement to check for the citation property before adding it to the HTML string.
    - Use an if statement to check for the year property before adding it to the HTML string.
    - Don't forget to close that final `p` tag.
    - Set the `innerHTML` of the `quote-box` div to the HTML string.
 ***/
-var randomQuote = getRandomQuote();
-function printQuote(getRandomQuote) {
+
+/*  Funstion should look like this ----  Below
+function printQuote() {
+// create a variable that calls the getRandomQuote() function
+// create a variable that initiates your HTML string
+// using the template in the project instructions, add the two default quote
+properties, quote and source
+// if there is a quote.citation property, add it the string
+// if there is a quote.year property, add it the string
+// close the string with the necessary closing HTML tags
+// set the innnerHTML of the .quote-box to the complete HTML string
+}
+*/
+
+
+//start of print function
+function printQuote() {
+  var ranQuote = getRandomQuote();
+  /*to test the random quote output using the printQuote function use logs below
+  ----------------------------------------------------------------------------
+  */
+  //console.log(ranQuote.quote);
+  //console.log(ranQuote.source);
+  //console.log(ranQuote.citation);
+  //console.log(ranQuote.year);
+
+
+  //quote string html output
+  var quoteOutput = '<div class="quote-box"><p class=\"quote\">' + ranQuote.quote + '</p>';
+    quoteOutput += ' <p class="source">' + ranQuote.source;
+
+    if (ranQuote.citation != null ){
+      quoteOutput += '<span class="citation"> '+ ranQuote.citation + '</span>';
+    }
+    if (ranQuote.year != null ){
+      quoteOutput += '<span class="year"> '+ ranQuote.year + '</span>';
+    }
+
+    quoteOutput += '</p>';
+    // quote source output string
+    //adding the if statement to check to see if citation is null then do nothing but if NOT empety add string to quoteOutput
+    document.getElementById('quote-box').innerHTML = quoteOutput;
+}
+
+  /*  Make the HTML print out this way
+  <p class="quote">Every great developer you know got there by solving problems they were unqualified to solve until they actually did it.</p>
+  <p class="source">Patrick McKenzie<span class="citation">Twitter</span><span class="year">2016</span></p>
+  /*
 
 }
 
