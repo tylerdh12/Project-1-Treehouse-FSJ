@@ -17,40 +17,40 @@ project 1 - A Random Quote Generator
 
 var quotes = [
     {
-        author : 'Helen Keller',
         quote : 'Although the world is full of suffering, it is full also of the overcoming of it.',
+        source : 'Helen Keller',
         citation : 'US blind & deaf educator',
-        timePeriod : '(1880 - 1968)'
+        year : '1880 - 1968'
     },
     {
-        author : 'Branch Rickey',
         quote : 'Luck is the residue of design.',
+        source : 'Branch Rickey',
         citation : 'US baseball administrator',
-        timePeriod : '(1881 - 1965)'
+        year : '1881 - 1965'
     },
     {
-        author : 'Steven Wright',
         quote : 'My theory of evolution is that Darwin was adopted.',
+        source : 'Steven Wright',
         citation : 'US comedian and actor',
-        timePeriod : '(1955 - )'
+        year : '1955'
     },
     {
-        author : 'Tish Grier',
         quote : 'It\'s always been about the experience of life and of not being passive. If something so excites my curiosty, I want to go there, be a part of whatever it is that\'s either pushing me or pulling me toward it. That desire for experience has made me very rich in life experience.',
+        source : 'Tish Grier',
         citation : 'love and hope and sex and dreams',
-        timePeriod : '2006'
+        year : '2006'
     },
     {
-        author : 'Daniel J. Boorstin',
         quote : 'The greatest obstacle to discovery is not ignorance - it is the illusion of knowledge.',
+        source : 'Daniel J. Boorstin',
         citation : 'US historian',
-        timePeriod : '(1914 - )'
+        year : '1914'
     },
     {
-        author : 'Seneca',
         quote : 'We should conduct ourselves not as if we ought to live for the body, but as if we could not live without it.',
+        source : 'Seneca',
         citation : 'Roman dramatist, philosopher, & politician',
-        timePeriod : '(5 BC - 65 AD)'
+        year : '5 BC - 65 AD'
     }
 ];
 
@@ -64,9 +64,10 @@ var quotes = [
 ***/
 
 //create a variable to store the random number generated from 0 to the length of the quotes (0-5)
-var randomNum = Math.floor( Math.random() * quotes.length );
+
 //Start of random quote function
 function getRandomQuote() {
+  var randomNum = Math.floor( Math.random() * quotes.length );
   //compare randomNum with quotes to pull random quote
   return(quotes[randomNum]);
   console.log(randomNum);
