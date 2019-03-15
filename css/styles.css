@@ -1,4 +1,4 @@
-/** 
+/**
  * Treehouse FSJS Techdegree
  * Random Quote Generator - CSS
  */
@@ -69,6 +69,15 @@ body {
 .year:before {
   content: ", ";
   font-style: normal;
+}
+
+.category {
+  font-style: normal;
+  border: solid white 2px;
+  padding: 10px;
+  margin: 2px;
+  float: right;
+  border-radius: 4px;
 }
 
 #loadQuote {
