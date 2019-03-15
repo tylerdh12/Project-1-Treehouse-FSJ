@@ -82,8 +82,9 @@ function getRandomColor() {
    var newColor = '#';
    //got to create a standard for loop that goes thro the loop 6 times to create a wider range of colors
    for (var i = 0; i < 6; i++) {
-     //now the random string gets added to our original # for the hash color using math.floor *16 because it will go thru all the available combinations of our availableLettersNumbers variable
-     newColor += availableLettersNumbers[Math.floor(Math.random() * 16)];
+     //now the random string gets added to our original # for the hash color. Using math.
+     //floor and length of availableLettersNumberss o it will go thru all the available combinations of our availableLettersNumbers variable
+     newColor += availableLettersNumbers[Math.floor(Math.random() * availableLettersNumbers.length)];
    }
    //we now need to return that new color value to where it can be used externally
    return newColor;
