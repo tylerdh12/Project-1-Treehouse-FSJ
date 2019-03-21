@@ -38,6 +38,10 @@ var quotes = [
         category : ['Fulfilment', 'Life', 'Passion']
     },
     {
+        quote : 'I long to accomplish a great and noble task, but it is my chief duty to accomplish small tasks as if they were great and noble.  For the world is moved along not just by the mighty shoves of its heroes, but also by the aggregate of the tiny pushes of each honest worker,',
+        source : 'Helen Keller'
+    },
+    {
         quote : 'The greatest obstacle to discovery is not ignorance - it is the illusion of knowledge.',
         source : 'Daniel J. Boorstin',
         citation : 'US historian',
